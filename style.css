@@ -34,3 +34,25 @@ body {
 .disco[data-cor="branco"] {
     background-color: white;
 }
+
+.disco[data-pos="0"] {
+    grid-column: 1;
+}
+.disco[data-pos="1"] {
+    grid-column: 2;
+}
+.disco[data-pos="2"] {
+    grid-column: 3;
+}
+.disco[data-pos="3"] {
+    grid-column: 4;
+}
+.disco[data-pos="4"] {
+    grid-column: 5;
+}
+.disco[data-pos="5"] {
+    grid-column: 6;
+}
+.disco[data-pos="6"] {
+    grid-column: 7;
+}

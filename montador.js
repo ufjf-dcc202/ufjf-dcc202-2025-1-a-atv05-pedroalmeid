@@ -1,10 +1,12 @@
 const tabuleiro = criaTabuleiro();
 document.body.append(tabuleiro);
 
-const disco1 = criaDisco("branco")
-tabuleiro.appendChild(disco1);
-const disco2 = criaDisco("preto")
-tabuleiro.appendChild(disco2);
+// Cria discos brancos e pretos
+for (let i = 0; i < 7; i++) {
+    if (i == 3) continue;
+    const disco = criaDisco(i < 3 ? "branco": "preto", i);
+    tabuleiro.append(disco);
+}
 
 function criaTabuleiro() {
     const eTabuleiro = document.createElement("div");
@@ -12,9 +14,10 @@ function criaTabuleiro() {
     return eTabuleiro;
 }
 
-function criaDisco(cor) {
+function criaDisco(cor, pos) {
     const eDisco = document.createElement("div");
     eDisco.classList.add("disco");
     eDisco.dataset.cor = cor;
+    eDisco.dataset.pos = pos;
     return eDisco;
 }
