@@ -15,5 +15,22 @@ body {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     width: 80vw;
-    min-height: 300px;
+    min-height: 200px;
+    gap: 20px;
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+
+.disco {
+    background-color: blue;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid black;
+}
+.disco[data-cor="preto"] {
+   background-color: rgb(42, 42, 42); 
+}
+.disco[data-cor="branco"] {
+    background-color: white;
 }
