@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.tabuleiro {
+    background-color: lightblue;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 80vw;
+    min-height: 300px;
+}
