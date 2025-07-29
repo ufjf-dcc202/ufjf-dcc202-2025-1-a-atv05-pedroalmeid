@@ -1,7 +1,20 @@
-const tabuleiro = ['b', 'b', 'b', '', 'p', 'p', 'p'];
+const tabuleiro = ['branco', 'branco', 'branco', '', 'preto', 'preto', 'preto'];
+let selecionado = null;
+
+export function getTabuleiro() {
+    return [...tabuleiro];
+}
+
+export function seleciona(posicao) {
+    if (selecionado === null || selecionado === posicao) {
+        selecionado = posicao;
+        return;
+    }
+    mover(selecionado, posicao);
+    selecionado = null;
+}
 
 function mover(origem, destino) {
-    if (origem < 0 || destino < 0 || origem > 6 || destino > 6) return;
     if (tabuleiro[origem] === '') return;
     if (tabuleiro[destino] !== '') return;
 

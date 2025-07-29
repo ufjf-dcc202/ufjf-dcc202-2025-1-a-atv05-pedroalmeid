@@ -1,11 +1,24 @@
-const tabuleiro = criaTabuleiro();
-document.body.append(tabuleiro);
+import { getTabuleiro, seleciona } from "./logica.js";
+
+const eTabuleiro = criaTabuleiro();
+atualizaTabuleiro();
+document.body.append(eTabuleiro);
 
 // Cria discos brancos e pretos
-for (let i = 0; i < 7; i++) {
-    if (i == 3) continue;
-    const disco = criaDisco(i < 3 ? "branco": "preto", i);
-    tabuleiro.append(disco);
+function atualizaTabuleiro() {
+    eTabuleiro.innerHTML = '';
+    const vecTabuleiro = getTabuleiro();
+    vecTabuleiro.forEach((cor, pos) => {
+        const disco = criaDisco(cor, pos);
+        disco.addEventListener("click", cliqueDisco)
+        eTabuleiro.appendChild(disco);
+    })
+}
+
+function cliqueDisco(evento) {
+    const posAlvo = evento.target.dataset.pos;
+    seleciona(posAlvo);
+    atualizaTabuleiro();
 }
 
 function criaTabuleiro() {
