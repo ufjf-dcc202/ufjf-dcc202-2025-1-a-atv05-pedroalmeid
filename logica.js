@@ -5,6 +5,10 @@ export function getTabuleiro() {
     return [...tabuleiro];
 }
 
+export function getSelecionado() {
+    return selecionado;
+}
+
 export function seleciona(posicao) {
     if (selecionado === null || selecionado === posicao) {
         selecionado = posicao;

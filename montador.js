@@ -1,4 +1,4 @@
-import { getTabuleiro, seleciona } from "./logica.js";
+import { getTabuleiro, getSelecionado, seleciona } from "./logica.js";
 
 const eTabuleiro = criaTabuleiro();
 atualizaTabuleiro();
@@ -10,7 +10,7 @@ function atualizaTabuleiro() {
     const vecTabuleiro = getTabuleiro();
     vecTabuleiro.forEach((cor, pos) => {
         const disco = criaDisco(cor, pos);
-        disco.addEventListener("click", cliqueDisco)
+        disco.addEventListener("click", cliqueDisco);
         eTabuleiro.appendChild(disco);
     })
 }
